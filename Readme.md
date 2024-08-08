@@ -1,5 +1,6 @@
 # npm command
 
+```bash
 npm i react-router-dom
 npm i react-icons
 npm i sass
@@ -7,9 +8,11 @@ npm i react-toastify
 npm install react-bootstrap bootstrap
 npm i formik
 npm i yup
+```
 
-# Attention
+## Attention
 
+```js
 ICONS
 import { IoMdAddCircle } from "react-icons/io";
 import { MdModeEdit } from "react-icons/md";
@@ -23,158 +26,216 @@ import 'react-toastify/dist/ReactToastify.css';
 
 BOOTSTRAP
 import 'bootstrap/dist/css/bootstrap.min.css';
+```
 
-# MainAPI.JS
+## MainAPI.JS
 
+```js
 export const MainAPI = "https://???.mockapi.io/???";
+```
 
-# Code Ribbon
+## Code Ribbon
 
+Ribbon HTML
+
+```html
 <div class="box">
-  <div class="ribbon ribbon-top-left"><span>ribbon</span></div>
-  <div class="ribbon ribbon-top-right"><span>ribbon</span></div>
-  <div class="ribbon ribbon-bottom-left"><span>ribbon</span></div>
-  <div class="ribbon ribbon-bottom-right"><span>ribbon</span></div>
+ <div class="ribbon ribbon-top-left"><span>ribbon</span></div>
+ <div class="ribbon ribbon-top-right"><span>ribbon</span></div>
+ <div class="ribbon ribbon-bottom-left"><span>ribbon</span></div>
+ <div class="ribbon ribbon-bottom-right"><span>ribbon</span></div>
 </div>
+```
 
+Ribbon CSS
+
+```css
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
-body {
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-background: #f0f0f0;
-}
-.box {
-position: relative;
-max-width: 600px;
-width: 90%;
-height: 400px;
-background: #fff;
-box-shadow: 0 0 15px rgba(0,0,0,.1);
+.ribbon {
+ width: 150px;
+ height: 150px;
+ overflow: hidden;
+ position: absolute;
 }
 
-/_ common _/
-.ribbon {
-width: 150px;
-height: 150px;
-overflow: hidden;
-position: absolute;
-}
 .ribbon::before,
 .ribbon::after {
-position: absolute;
-z-index: -1;
-content: '';
-display: block;
-border: 5px solid #2980b9;
-}
-.ribbon span {
-position: absolute;
-display: block;
-width: 225px;
-padding: 15px 0;
-background-color: #3498db;
-box-shadow: 0 5px 10px rgba(0,0,0,.1);
-color: #fff;
-font: 700 18px/1 'Lato', sans-serif;
-text-shadow: 0 1px 1px rgba(0,0,0,.2);
-text-transform: uppercase;
-text-align: center;
+ position: absolute;
+ z-index: -1;
+ content: "";
+ display: block;
+ border: 5px solid rgb(238, 109, 86);
 }
 
-/_ top left_/
+.ribbon span {
+ position: absolute;
+ display: block;
+ width: 225px;
+ padding: 15px 0;
+ background-color: tomato;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+ color: #fff;
+ font: 700 14px/1 "Lato", sans-serif;
+ text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+ text-transform: uppercase;
+ text-align: center;
+}
+
+/* /_ top left_/ */
 .ribbon-top-left {
-top: -10px;
-left: -10px;
+ top: -10px;
+ left: -10px;
 }
 .ribbon-top-left::before,
 .ribbon-top-left::after {
-border-top-color: transparent;
-border-left-color: transparent;
+ border-top-color: transparent;
+ border-left-color: transparent;
 }
 .ribbon-top-left::before {
-top: 0;
-right: 0;
+ top: 0;
+ right: 0;
 }
 .ribbon-top-left::after {
-bottom: 0;
-left: 0;
+ bottom: 0;
+ left: 0;
 }
 .ribbon-top-left span {
-right: -25px;
-top: 30px;
-transform: rotate(-45deg);
+ right: -25px;
+ top: 30px;
+ transform: rotate(-45deg);
 }
 
-/_ top right_/
-.ribbon-top-right {
-top: -10px;
-right: -10px;
-}
-.ribbon-top-right::before,
-.ribbon-top-right::after {
-border-top-color: transparent;
-border-right-color: transparent;
-}
-.ribbon-top-right::before {
-top: 0;
-left: 0;
-}
-.ribbon-top-right::after {
-bottom: 0;
-right: 0;
-}
-.ribbon-top-right span {
-left: -25px;
-top: 30px;
-transform: rotate(45deg);
+/* Dashboard */
+.dashboard,
+.Add__container {
+ padding: 50px 0 0;
+ min-height: calc(100vh - 56px);
 }
 
-/_ bottom left_/
-.ribbon-bottom-left {
-bottom: -10px;
-left: -10px;
-}
-.ribbon-bottom-left::before,
-.ribbon-bottom-left::after {
-border-bottom-color: transparent;
-border-left-color: transparent;
-}
-.ribbon-bottom-left::before {
-bottom: 0;
-right: 0;
-}
-.ribbon-bottom-left::after {
-top: 0;
-left: 0;
-}
-.ribbon-bottom-left span {
-right: -25px;
-bottom: 30px;
-transform: rotate(225deg);
+.add-new-orchid button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ font-weight: bold;
+ border: none;
+ outline: none;
+ border-radius: 5px;
+ background: #1376f8;
+ font-size: 20px;
+ width: 100%;
+ margin-bottom: 20px;
 }
 
-/_ bottom right_/
-.ribbon-bottom-right {
-bottom: -10px;
-right: -10px;
+.add-new-orchid button:hover {
+ background: #2e2100;
 }
-.ribbon-bottom-right::before,
-.ribbon-bottom-right::after {
-border-bottom-color: transparent;
-border-right-color: transparent;
+
+.dashboard__table {
+ vertical-align: middle;
+ font-size: 20px;
 }
-.ribbon-bottom-right::before {
-bottom: 0;
-left: 0;
+
+.dashboard__table img {
+ width: 100%;
+ height: 90px;
+ object-fit: cover;
+ background-position: center center;
 }
-.ribbon-bottom-right::after {
-top: 0;
-right: 0;
+
+.dashboard__table .image {
+ width: 260px;
 }
-.ribbon-bottom-right span {
-left: -25px;
-bottom: 30px;
-transform: rotate(-225deg);
+
+.dashboard__table thead th:first-child,
+.dashboard__table thead th:nth-of-type(4),
+.dashboard__table thead th:nth-of-type(5),
+.dashboard__table thead th:nth-of-type(6),
+.dashboard__table thead th:last-child,
+.dashboard__table tbody td:first-child,
+.dashboard__table tbody td:nth-of-type(4),
+.dashboard__table tbody td:nth-of-type(5),
+.dashboard__table tbody td:nth-of-type(6),
+.dashboard__table tbody td:last-child {
+ text-align: center;
 }
+
+.dashboard__table svg {
+ color: #fff;
+}
+
+.dashboard__table button {
+ font-size: 16px;
+}
+
+.dashboard__table td,
+.dashboard__table th {
+ vertical-align: middle;
+}
+
+.dashboard__table img {
+ width: 100%;
+ height: 100px;
+ object-fit: cover;
+ background-position: center center;
+}
+
+.dashboard__table .btn-wrapper {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-wrap: wrap;
+ gap: 5px;
+}
+
+.dashboard__table .btn-wrapper button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 10px;
+}
+
+/* ========= PAGINATION ========= */
+.pagination {
+ margin-top: 20px;
+ justify-content: center;
+}
+
+.page-link {
+ display: inline-flex;
+ width: 40px;
+ height: 40px;
+ padding: 0;
+ color: #1376f8;
+ font-weight: bold;
+ font-size: 1.8rem;
+ border: none;
+ outline: none;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+ border-radius: 50%;
+ transition: all 0.25s ease-in-out;
+}
+
+.page-item.active .page-link {
+ background: #1376f8;
+}
+
+.page-link:hover {
+ color: #2e2100;
+}
+
+.page-item.active .page-link:hover {
+ color: #fff;
+}
+
+.dashboard .page-item:first-child .page-link,
+.dashboard .page-item:last-child .page-link {
+ border-radius: 50%;
+}
+
+.page-item:not(:first-child) {
+ margin-left: 8px;
+}
+```
