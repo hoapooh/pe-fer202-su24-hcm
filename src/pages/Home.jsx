@@ -4,12 +4,11 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-	const baseURL = `${MainAPI}`;
 	const [API, setAPI] = useState([]);
 
 	useEffect(() => {
 		const fetchAPI = async () => {
-			await fetch(baseURL, {
+			await fetch(MainAPI, {
 				method: "GET",
 				headers: {
 					"Content-type": "application/json",
@@ -25,7 +24,7 @@ export default function Home() {
 		};
 
 		fetchAPI();
-	}, [baseURL]);
+	}, []);
 
 	return (
 		<div>
