@@ -1,69 +1,88 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
+$color_1: #fff;
+$color_2: #1376f8;
+$color_3: #2e2100;
+$background-color_1: tomato;
+$border-top-color_1: transparent;
+$border-left-color_1: transparent;
+
+/* /_ top left_/ */
+/* Dashboard */
+/* ========= PAGINATION ========= */
 .ribbon {
 	width: 150px;
 	height: 150px;
 	overflow: hidden;
 	position: absolute;
-
-	& ::before,
-	::after {
+	&::before {
 		position: absolute;
 		z-index: -1;
 		content: "";
 		display: block;
 		border: 5px solid rgb(238, 109, 86);
 	}
-
+	&::after {
+		position: absolute;
+		z-index: -1;
+		content: "";
+		display: block;
+		border: 5px solid rgb(238, 109, 86);
+	}
 	span {
 		position: absolute;
 		display: block;
 		width: 225px;
 		padding: 15px 0;
-		background-color: tomato;
+		background-color: $background-color_1;
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-		color: #fff;
+		color: $color_1;
 		font: 700 14px/1 "Lato", sans-serif;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 		text-transform: uppercase;
 		text-align: center;
 	}
 }
-
-/* /_ top left_/ */
 .ribbon-top-left {
 	top: -10px;
 	left: -10px;
-
-	& ::before,
-	::after {
-		border-top-color: transparent;
-		border-left-color: transparent;
-	}
-
-	& ::before {
+	&::before {
+		border-top-color: $border-top-color_1;
+		border-left-color: $border-left-color_1;
 		top: 0;
 		right: 0;
 	}
-
-	& ::after {
+	&::after {
+		border-top-color: $border-top-color_1;
+		border-left-color: $border-left-color_1;
 		bottom: 0;
 		left: 0;
 	}
-
 	span {
 		right: -25px;
 		top: 30px;
 		transform: rotate(-45deg);
 	}
 }
-
-/* Dashboard */
-.dashboard,
+.dashboard {
+	padding: 50px 0 0;
+	min-height: calc(100vh - 56px);
+	.page-item {
+		&:first-child {
+			.page-link {
+				border-radius: 50%;
+			}
+		}
+		&:last-child {
+			.page-link {
+				border-radius: 50%;
+			}
+		}
+	}
+}
 .Add__container {
 	padding: 50px 0 0;
 	min-height: calc(100vh - 56px);
 }
-
 .add-new-orchid {
 	button {
 		display: flex;
@@ -78,82 +97,101 @@
 		font-size: 20px;
 		width: 100%;
 		margin-bottom: 20px;
-
-		& :hover {
+		&:hover {
 			background: #2e2100;
 		}
 	}
 }
-
 .dashboard__table {
 	vertical-align: middle;
 	font-size: 20px;
-
 	img {
+		width: 100%;
+		height: 90px;
+		object-fit: cover;
+		background-position: center center;
 		width: 100%;
 		height: 100px;
 		object-fit: cover;
 		background-position: center center;
 	}
-
 	.image {
 		width: 260px;
 	}
-
-	svg {
-		color: #fff;
+	thead {
+		th {
+			&:first-child {
+				text-align: center;
+			}
+			&:nth-of-type(4) {
+				text-align: center;
+			}
+			&:nth-of-type(5) {
+				text-align: center;
+			}
+			&:nth-of-type(6) {
+				text-align: center;
+			}
+			&:last-child {
+				text-align: center;
+			}
+		}
 	}
-
+	tbody {
+		td {
+			&:first-child {
+				text-align: center;
+			}
+			&:nth-of-type(4) {
+				text-align: center;
+			}
+			&:nth-of-type(5) {
+				text-align: center;
+			}
+			&:nth-of-type(6) {
+				text-align: center;
+			}
+			&:last-child {
+				text-align: center;
+			}
+		}
+	}
+	svg {
+		color: $color_1;
+	}
 	button {
 		font-size: 16px;
 	}
-
+	td {
+		vertical-align: middle;
+	}
+	th {
+		vertical-align: middle;
+	}
 	.btn-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 5px;
-
 		button {
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			padding: 10px;
 		}
-
-		thead {
-			th,
-			td {
-				& :first-child,
-				:nth-of-type(4),
-				:nth-of-type(5),
-				:nth-of-type(6),
-				:last-child {
-					text-align: center;
-				}
-			}
-		}
-
-		td,
-		th {
-			vertical-align: middle;
-		}
 	}
 }
-
-/* ========= PAGINATION ========= */
 .pagination {
 	margin-top: 20px;
 	justify-content: center;
 }
-
 .page-link {
 	display: inline-flex;
 	width: 40px;
 	height: 40px;
 	padding: 0;
-	color: #1376f8;
+	color: $color_2;
 	font-weight: bold;
 	font-size: 1.8rem;
 	border: none;
@@ -163,33 +201,20 @@
 	justify-content: center;
 	border-radius: 50%;
 	transition: all 0.25s ease-in-out;
-
-	& :hover {
-		color: #2e2100;
+	&:hover {
+		color: $color_3;
 	}
 }
-
 .page-item.active {
 	.page-link {
 		background: #1376f8;
-
-		& :hover {
-			color: #fff;
+		&:hover {
+			color: $color_1;
 		}
 	}
 }
-
-.dashboard {
-	.page-item {
-		& :first-child,
-		:last-child {
-			.page-link {
-				border-radius: 50%;
-			}
-		}
-
-		& :not(:first-child) {
-			margin-left: 8px;
-		}
+.page-item {
+	&:not(:first-child) {
+		margin-left: 8px;
 	}
 }
