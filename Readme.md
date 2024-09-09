@@ -87,7 +87,8 @@ body {
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/_ common _/ .ribbon {
+// __common__
+.ribbon {
 	width: 150px;
 	height: 150px;
 	overflow: hidden;
@@ -115,7 +116,8 @@ body {
 	text-align: center;
 }
 
-/_ top left_/ .ribbon-top-left {
+// __top left__
+.ribbon-top-left {
 	top: -10px;
 	left: -10px;
 }
@@ -138,7 +140,8 @@ body {
 	transform: rotate(-45deg);
 }
 
-/_ top right_/ .ribbon-top-right {
+// __top right__
+.ribbon-top-right {
 	top: -10px;
 	right: -10px;
 }
@@ -161,7 +164,8 @@ body {
 	transform: rotate(45deg);
 }
 
-/_ bottom left_/ .ribbon-bottom-left {
+// __bottom left__
+.ribbon-bottom-left {
 	bottom: -10px;
 	left: -10px;
 }
@@ -184,7 +188,8 @@ body {
 	transform: rotate(225deg);
 }
 
-/_ bottom right_/ .ribbon-bottom-right {
+// __bottom right__
+.ribbon-bottom-right {
 	bottom: -10px;
 	right: -10px;
 }
@@ -234,47 +239,13 @@ body {
 	background: #fff;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-/_ {
-	common {
-		_/ {
-			.ribbon {
-				width: 150px;
-				height: 150px;
-				overflow: hidden;
-				position: absolute;
-			}
-		}
-	}
-	top {
-		left_/ {
-			.ribbon-top-left {
-				top: -10px;
-				left: -10px;
-			}
-		}
-		right_/ {
-			.ribbon-top-right {
-				top: -10px;
-				right: -10px;
-			}
-		}
-	}
-	bottom {
-		left_/ {
-			.ribbon-bottom-left {
-				bottom: -10px;
-				left: -10px;
-			}
-		}
-		right_/ {
-			.ribbon-bottom-right {
-				bottom: -10px;
-				right: -10px;
-			}
-		}
-	}
-}
+
+// __common__
 .ribbon {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: absolute;
 	&::before {
 		position: absolute;
 		z-index: -1;
@@ -303,7 +274,11 @@ body {
 		text-align: center;
 	}
 }
+
+// __top left__
 .ribbon-top-left {
+	top: -10px;
+	left: -10px;
 	&::before {
 		border-top-color: $border-top-color_1;
 		border-left-color: $border-left-color_1;
@@ -322,7 +297,11 @@ body {
 		transform: rotate(-45deg);
 	}
 }
+
+// __top right__
 .ribbon-top-right {
+	top: -10px;
+	right: -10px;
 	&::before {
 		border-top-color: $border-top-color_1;
 		border-right-color: $border-right-color_1;
@@ -341,7 +320,11 @@ body {
 		transform: rotate(45deg);
 	}
 }
+
+// __bottom left__
 .ribbon-bottom-left {
+	bottom: -10px;
+	left: -10px;
 	&::before {
 		border-bottom-color: $border-bottom-color_1;
 		border-left-color: $border-left-color_1;
@@ -360,7 +343,11 @@ body {
 		transform: rotate(225deg);
 	}
 }
+
+// __bottom right__
 .ribbon-bottom-right {
+	bottom: -10px;
+	right: -10px;
 	&::before {
 		border-bottom-color: $border-bottom-color_1;
 		border-right-color: $border-right-color_1;
