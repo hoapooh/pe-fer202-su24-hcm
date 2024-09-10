@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 
 export default function Add() {
 	const baseURL = `${MainAPI}`;

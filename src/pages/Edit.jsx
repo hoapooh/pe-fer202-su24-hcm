@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { MainAPI } from "../MainAPI";
 import { toast } from "react-toastify";
-import * as Yup from "Yup";
+import * as Yup from "yup";
 import { useCallback, useEffect } from "react";
 import { useFormik } from "formik";
 import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
