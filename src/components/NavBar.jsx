@@ -6,57 +6,55 @@ export default function NavBar() {
 		<Navbar
 			expand="lg"
 			className="bg-body-tertiary"
-			style={{ cssText: "background-color: #1376f8 !important;" }}
+			style={{ cssText: "background-color: #1376f8 !important" }}
 		>
 			<Container fluid>
-				<Navbar.Brand>
-					<Link
-						to={"/"}
-						style={{
-							color: "#fff",
-							fontWeight: "bold",
-							textDecoration: "none",
-						}}
-					>
-						Art Tools
-					</Link>
-				</Navbar.Brand>
+				<Link
+					to={"/"}
+					style={{
+						padding: "5px 0",
+						color: "#fff",
+						fontWeight: "bold",
+						textDecoration: "none",
+						fontSize: "1.4rem",
+						marginRight: "10px",
+					}}
+				>
+					Art Tools
+				</Link>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link>
-							<Link
-								to={"/"}
-								style={{
-									color: "#fff",
-									textDecoration: "none",
-								}}
-							>
-								Home
-							</Link>
-						</Nav.Link>
-						<Nav.Link>
-							<Link
-								to={"/arttools"}
-								style={{
-									color: "#fff",
-									textDecoration: "none",
-								}}
-							>
-								Art Tools
-							</Link>
-						</Nav.Link>
-						<Nav.Link>
-							<Link
-								to={"/contact"}
-								style={{
-									color: "#fff",
-									textDecoration: "none",
-								}}
-							>
-								Contact
-							</Link>
-						</Nav.Link>
+						<Link
+							to={"/"}
+							style={{
+								color: "#fff",
+								textDecoration: "none",
+								padding: "8px",
+							}}
+						>
+							Home
+						</Link>
+						<Link
+							to={"/hoapooh"}
+							style={{
+								color: "#fff",
+								textDecoration: "none",
+								padding: "8px",
+							}}
+						>
+							Art Tools
+						</Link>
+						<Link
+							to={"/contact"}
+							style={{
+								color: "#fff",
+								textDecoration: "none",
+								padding: "8px",
+							}}
+						>
+							Contact
+						</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

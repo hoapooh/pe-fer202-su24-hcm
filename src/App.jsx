@@ -5,6 +5,8 @@ import ArtTools from "./pages/ArtTools";
 import Contact from "./pages/Contact";
 import NavBar from "./components/NavBar";
 import Detail from "./pages/Detail";
+import Add from "./pages/Add";
+import Edit from "./pages/Edit";
 
 function App() {
 	return (
@@ -13,9 +15,11 @@ function App() {
 			<ToastContainer />
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/arttools" element={<ArtTools />} />
+				<Route path="/hoapooh" element={<ArtTools />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/detail/:id" element={<Detail />} />
+				<Route path="/add" element={<Add />} />
+				<Route path="/edit/:id" element={<Edit />} />
 			</Routes>
 		</>
 	);
