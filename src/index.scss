@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
 $color_1: #fff;
-$color_2: #1376f8;
+$color_2: #dacdf4;
 $color_3: #2e2100;
 $background-color_1: tomato;
 $border-top-color_1: transparent;
@@ -191,7 +191,7 @@ $border-left-color_1: transparent;
 	width: 40px;
 	height: 40px;
 	padding: 0;
-	color: $color_2;
+	color: #050505 !important;
 	font-weight: bold;
 	font-size: 1.8rem;
 	border: none;
@@ -207,7 +207,8 @@ $border-left-color_1: transparent;
 }
 .page-item.active {
 	.page-link {
-		background: #1376f8;
+		background: #dacdf4;
+		border: 1.5px solid #050505;
 		&:hover {
 			color: $color_1;
 		}

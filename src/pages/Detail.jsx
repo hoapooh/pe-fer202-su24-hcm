@@ -17,8 +17,7 @@ export default function Detail() {
 				},
 			})
 				.then((response) => {
-					if (!response.ok)
-						throw new Error("Network response was not ok");
+					if (!response.ok) throw new Error("Network response was not ok");
 					return response.json();
 				})
 				.then((data) => setAPI(data))
@@ -41,7 +40,8 @@ export default function Detail() {
 				<Link to={"/"} style={{ textDecoration: "none" }}>
 					<Button
 						variant="primary"
-						style={{ fontWeight: "bold", marginBottom: "20px" }}
+						className="btn-main-style"
+						style={{ width: "initial", marginBottom: "20px" }}
 					>
 						Back to Home page
 					</Button>
@@ -61,11 +61,7 @@ export default function Detail() {
 						</div>
 					)}
 					<Row style={{ height: "100%" }}>
-						<Col
-							xs={12}
-							md={6}
-							style={{ height: "100%", textAlign: "center" }}
-						>
+						<Col xs={12} md={6} style={{ height: "100%", textAlign: "center" }}>
 							<Image
 								variant="top"
 								src={API.image}
@@ -78,31 +74,18 @@ export default function Detail() {
 							/>
 						</Col>
 						<Col xs={12} md={6}>
-							<h1 style={{ fontWeight: "bold" }}>
-								{API.artName}
-							</h1>
+							<h1 style={{ fontWeight: "bold" }}>{API.artName}</h1>
 							<p>
-								<span style={{ fontWeight: "bold" }}>
-									Price:
-								</span>{" "}
-								{API.price}
+								<span style={{ fontWeight: "bold" }}>Price:</span> {API.price}
 							</p>
 							<p>
-								<span style={{ fontWeight: "bold" }}>
-									Brand:
-								</span>{" "}
-								{API.brand}
+								<span style={{ fontWeight: "bold" }}>Brand:</span> {API.brand}
 							</p>
 							<p>
-								<span style={{ fontWeight: "bold" }}>
-									Description:
-								</span>{" "}
-								{API.description}
+								<span style={{ fontWeight: "bold" }}>Description:</span> {API.description}
 							</p>
 							<p>
-								<span style={{ fontWeight: "bold" }}>
-									Limited Time Deal:
-								</span>{" "}
+								<span style={{ fontWeight: "bold" }}>Limited Time Deal:</span>{" "}
 								{API.limitedTimeDeal > 0
 									? `${API.limitedTimeDeal * 100}%`
 									: "There is no deal here"}

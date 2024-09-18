@@ -6,7 +6,7 @@ export default function NavBar() {
 		<Navbar
 			expand="lg"
 			className="bg-body-tertiary"
-			style={{ cssText: "background-color: #1376f8 !important" }}
+			style={{ cssText: "background-color: #151514 !important" }}
 		>
 			<Container fluid>
 				<Link

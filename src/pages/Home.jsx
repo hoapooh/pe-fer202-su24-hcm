@@ -15,8 +15,7 @@ export default function Home() {
 				},
 			})
 				.then((response) => {
-					if (!response.ok)
-						throw new Error("Network response was not ok");
+					if (!response.ok) throw new Error("Network response was not ok");
 					return response.json();
 				})
 				.then((data) => setAPI(data))
@@ -33,17 +32,9 @@ export default function Home() {
 					{API.map((art) => {
 						if (art.limitedTimeDeal !== 0) return null;
 						return (
-							<Col
-								xs={12}
-								md={4}
-								key={art.id}
-								style={{ marginTop: "30px" }}
-							>
+							<Col xs={12} md={4} key={art.id} style={{ marginTop: "30px" }}>
 								<Card style={{ width: "100%", height: "100%" }}>
-									<Link
-										to={`/detail/${art.id}`}
-										style={{ textAlign: "center" }}
-									>
+									<Link to={`/detail/${art.id}`} style={{ textAlign: "center" }}>
 										<Card.Img
 											variant="top"
 											src={art.image}
@@ -56,35 +47,19 @@ export default function Home() {
 									</Link>
 									<Card.Body>
 										<Card.Title>{art.artName}</Card.Title>
-										<Card.Text>
-											Price: {art.price}
-										</Card.Text>
+										<Card.Text>Price: {art.price}</Card.Text>
 										<Card.Text
 											style={{
 												fontStyle: "italic",
-												color: `${
-													art.glassSurface
-														? "#1376f8"
-														: "tomato"
-												}`,
+												color: `${art.glassSurface ? "#9362f5" : "tomato"}`,
 												fontWeight: "bold",
 											}}
 										>
-											{art.glassSurface
-												? "This is a Glass Surface"
-												: "This is not a Glass Surface"}
+											{art.glassSurface ? "This is a Glass Surface" : "This is not a Glass Surface"}
 										</Card.Text>
-										<Card.Text>
-											Brand: {art.brand}
-										</Card.Text>
+										<Card.Text>Brand: {art.brand}</Card.Text>
 										<Link to={`/detail/${art.id}`}>
-											<Button
-												variant="primary"
-												style={{
-													width: "100%",
-													fontWeight: "bold",
-												}}
-											>
+											<Button variant="primary" className="btn-main-style">
 												View Details
 											</Button>
 										</Link>

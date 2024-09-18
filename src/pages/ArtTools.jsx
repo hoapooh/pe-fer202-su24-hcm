@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { MainAPI } from "../MainAPI";
 import { Button, Col, Container, Image, Pagination, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -122,7 +122,7 @@ export default function ArtTools() {
 				<Row className="justify-content-md-end">
 					<Col md={12}>
 						<Link to={"/add"}>
-							<Button variant="primary" style={{ fontWeight: "bold" }}>
+							<Button variant="primary" className="btn-main-style" style={{ width: "initial" }}>
 								Add new Art Tools
 							</Button>
 						</Link>
@@ -164,7 +164,7 @@ export default function ArtTools() {
 										<td>
 											<div className="btn-wrapper">
 												<Link to={`/edit/${art.id}`}>
-													<Button variant="primary">
+													<Button variant="primary" className="btn-main-style edit">
 														<MdModeEdit />
 													</Button>
 												</Link>
