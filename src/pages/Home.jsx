@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { MainAPI } from "../MainAPI";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
 export default function Home() {
 	const [API, setAPI] = useState([]);
+	const sectionRef = useAnimateOnScroll(0.2); // Adjust the delay increment as needed
 
 	useEffect(() => {
 		const fetchAPI = async () => {
@@ -25,15 +27,50 @@ export default function Home() {
 		fetchAPI();
 	}, []);
 
+	useEffect(() => {
+		const currentElements = sectionRef.current;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("in-view");
+					}
+				});
+			},
+			{
+				threshold: 0.1, // Adjust this value as needed
+			}
+		);
+
+		currentElements.forEach((element, index) => {
+			if (element) {
+				element.style.transitionDelay = `${index * 0.2}s`; // Adjust the delay as needed
+				observer.observe(element);
+			}
+		});
+
+		return () => {
+			currentElements.forEach((element) => {
+				if (element) {
+					observer.unobserve(element);
+				}
+			});
+		};
+	}, [API, sectionRef]);
+
 	return (
 		<div>
 			<Container style={{ padding: "50px 0" }}>
 				<Row>
-					{API.map((art) => {
+					{API.map((art, index) => {
 						if (art.limitedTimeDeal !== 0) return null;
 						return (
 							<Col xs={12} md={4} key={art.id} style={{ marginTop: "30px" }}>
-								<Card style={{ width: "100%", height: "100%" }}>
+								<Card
+									ref={(el) => (sectionRef.current[index] = el)}
+									className="element-to-animate"
+									style={{ width: "100%", height: "100%" }}
+								>
 									<Link to={`/detail/${art.id}`} style={{ textAlign: "center" }}>
 										<Card.Img
 											variant="top"

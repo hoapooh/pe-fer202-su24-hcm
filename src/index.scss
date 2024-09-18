@@ -6,6 +6,10 @@ $background-color_1: tomato;
 $border-top-color_1: transparent;
 $border-left-color_1: transparent;
 
+body {
+	overflow-x: hidden;
+}
+
 /* /_ top left_/ */
 /* Dashboard */
 /* ========= PAGINATION ========= */
@@ -217,5 +221,22 @@ $border-left-color_1: transparent;
 .page-item {
 	&:not(:first-child) {
 		margin-left: 8px;
+	}
+}
+
+/* Initial state */
+.element-to-animate {
+	transform: translate3d(0px, 40px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+		skew(0deg, 0deg);
+	opacity: 0;
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+
+	/* Final state (when in view) */
+	&.in-view {
+		transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+			skew(0deg, 0deg);
+		opacity: 1;
+		transform-style: preserve-3d;
 	}
 }
