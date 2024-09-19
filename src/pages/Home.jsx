@@ -6,7 +6,7 @@ import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
 export default function Home() {
 	const [API, setAPI] = useState([]);
-	const sectionRef = useAnimateOnScroll(0.2); // Adjust the delay increment as needed
+	const sectionRef = useAnimateOnScroll(); // Adjust the delay increment as needed
 
 	useEffect(() => {
 		const fetchAPI = async () => {
@@ -44,7 +44,7 @@ export default function Home() {
 
 		currentElements.forEach((element, index) => {
 			if (element) {
-				element.style.transitionDelay = `${index * 0.2}s`; // Adjust the delay as needed
+				element.style.transitionDelay = `${index * 0.04}s`; // Adjust the delay as needed
 				observer.observe(element);
 			}
 		});
