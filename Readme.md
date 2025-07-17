@@ -1,13 +1,7 @@
 # npm command
 
 ```bash
-npm i react-router-dom
-npm i react-icons
-npm i sass
-npm i react-toastify
-npm install react-bootstrap bootstrap
-npm i formik
-npm i yup
+npm i react-router-dom react-icons sass react-toastify react-bootstrap bootstrap formik yup
 ```
 
 ## Attention
